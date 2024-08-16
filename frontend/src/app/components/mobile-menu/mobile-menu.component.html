@@ -1,0 +1,33 @@
+<div class="mobile-menu">
+  <div class="top-row">
+    <button (click)="onLogout()" class="btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    <button (click)="close()" class="close-btn">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="menu-content">
+    <div class="user-info" *ngIf="isAuthenticated">
+      <div class="welcome-message"><a routerLink="/my-profile" (click)="close()">Welcome {{ username }}!</a></div>
+    </div>
+    <ul class="menu-items">
+      <li><a routerLink="/" (click)="close()">Home</a></li>
+      <li><a routerLink="/about" (click)="close()">About</a></li>
+      <li><a routerLink="/contact" (click)="close()">Contact</a></li>
+      <li><a routerLink="/car-ads" (click)="close()">Car Ads</a></li>
+      <li *ngIf="isUser"><a routerLink="/my-ads" (click)="close()">My Ads</a></li>
+      <ng-container *ngIf="isAuthenticated">
+        <li *ngIf="isAdmin"><a routerLink="/users-reports" (click)="close()">Users Reports</a></li>
+        <li *ngIf="isAdmin"><a routerLink="/reports" (click)="close()">Reports</a></li>
+        <li *ngIf="isAdmin"><a routerLink="/users" (click)="close()">Users</a></li>
+      </ng-container>
+    </ul>
+    <ul class="auth-buttons-mobile" *ngIf="!isAuthenticated">
+      <li (click)="close()">
+        <button routerLink="/login" class="btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+      </li>
+      <li (click)="close()">
+        <button routerLink="/signup" class="btn"><i class="fas fa-user-plus"></i> Register</button>
+      </li>
+    </ul>
+  </div>
+</div>

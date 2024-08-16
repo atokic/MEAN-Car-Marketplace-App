@@ -1,0 +1,32 @@
+<section class="car-ads-form">
+  <div class="container">
+    <app-loader *ngIf="isLoading"></app-loader>
+    <div class="layout">
+      <div class="ads-container">
+        <app-search (search)="onSearch($event)"></app-search>
+        <div class="filter-wrapper">
+          <app-filter (filterChanged)="onFilter($event)"></app-filter>
+        </div>
+        <div class="cards-container">
+          <div *ngFor="let car of filteredCars; trackBy: trackCar" class="card">
+            <img [src]="car.image" alt="{{ car.brand }} {{ car.model }}" class="card-img" />
+            <div class="card-content">
+              <h2 class="card-title">{{ car.brand }} {{ car.model }}</h2>
+              <p class="card-details"><strong>Model:</strong> {{ car.model }}</p>
+              <p class="card-details"><strong>Year:</strong> {{ car.year }}</p>
+              <p class="card-details"><strong>Price:</strong> {{ formatPrice(car.price) }}</p>
+              <p class="card-details"><strong>Kilometers:</strong> {{ formatKilometers(car.kilometers) }}</p>
+              <p class="card-details"><strong>Fuel:</strong> {{ car.fuel }}</p>
+              <p class="card-details"><strong>Consumption:</strong> {{ formatConsumption(car.consumption) }}</p>
+              <p class="card-details"><strong>Description:</strong> {{ car.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="filteredCars.length === 0" class="no-results-message">
+          <i class="no-results-icon fa fa-sad-tear"></i>
+          <p class="no-results-text">No results found. Try different search terms or filters!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

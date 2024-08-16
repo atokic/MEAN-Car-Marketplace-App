@@ -1,0 +1,26 @@
+<section class="car-item">
+    <div class="car-container" *ngIf="car">
+      <div class="car-card">
+        <div class="car-header">
+          <div class="car-title">
+            <h2>{{ car.brand }} {{ car.model }}</h2>
+            <p>{{ car.year }}</p>
+          </div>
+        </div>
+        <img [src]="car.image" alt="{{ car.brand }} {{ car.model }}" class="car-img" />
+        <div class="car-info">
+          <h3>Details</h3>
+          <p><strong>Price:</strong> ${{ car.price }}</p>
+          <p><strong>Kilometers:</strong> {{ car.kilometers }} km</p>
+          <p><strong>Fuel:</strong> {{ car.fuel }}</p>
+          <p><strong>Consumption:</strong> {{ car.consumption }} L/100km</p>
+          <p><strong>Description:</strong> {{ car.description }}</p>
+        </div>
+        <div class="car-actions">
+          <button mat-raised-button color="primary" (click)="editCar()">Edit</button>
+          <button mat-raised-button color="warn" (click)="deleteCar()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  

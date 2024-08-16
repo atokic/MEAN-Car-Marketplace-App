@@ -1,0 +1,148 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.top-row {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.btn {
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.btn i {
+  margin-right: 0.5rem;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+  transform: scale(1.05);
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 6rem;
+  box-sizing: border-box;
+}
+
+.user-info {
+  margin-bottom: 2rem;
+}
+
+.welcome-message {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.welcome-message a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu-items li {
+  margin: 1.5rem 0;
+}
+
+.menu-items li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.menu-items li a:hover {
+  color: #4b6cb7;
+  transform: scale(1.1);
+}
+
+.auth-buttons-mobile {
+  margin-top: 2rem;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-buttons-mobile li {
+  margin: 1rem 0;
+}
+
+.auth-buttons-mobile .btn {
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.auth-buttons-mobile .btn i {
+  margin-right: 0.5rem;
+}
+
+.auth-buttons-mobile .btn:hover {
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+  transform: scale(1.05);
+}

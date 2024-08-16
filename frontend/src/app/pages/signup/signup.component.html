@@ -1,0 +1,175 @@
+<section class="auth-form">
+  <div class="container">
+    <div class="form-content">
+      <div class="form-container">
+        <h1>Sign Up</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="firstName"
+                formControlName="firstName"
+                [ngClass]="{'touched': signupForm.controls['firstName'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="signupForm.controls['firstName'].invalid && signupForm.controls['firstName'].touched">
+                First name is required.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="lastName"
+                formControlName="lastName"
+                [ngClass]="{'touched': signupForm.controls['lastName'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="signupForm.controls['lastName'].invalid && signupForm.controls['lastName'].touched">
+                Last name is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="username">Username <span class="required">*</span></label>
+              <input
+                type="text"
+                id="username"
+                formControlName="username"
+                [ngClass]="{'touched': signupForm.controls['username'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="signupForm.controls['username'].invalid && signupForm.controls['username'].touched">
+                Username is required.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="email">E-mail <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                [ngClass]="{'touched': signupForm.controls['email'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">
+                A valid e-mail address is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="password">Password <span class="required">*</span></label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  [ngClass]="{'touched': signupForm.controls['password'].touched}"
+                  class="fixed-input"
+                />
+                <button type="button" (click)="togglePasswordVisibility('password')">
+                  <img src="assets/eye.png" alt="Toggle Password Visibility" />
+                </button>
+              </div>
+              <div class="error-message" *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched">
+                Password is required (min 6 characters).
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  formControlName="confirmPassword"
+                  [ngClass]="{'touched': signupForm.controls['confirmPassword'].touched}"
+                  class="fixed-input"
+                />
+                <button type="button" (click)="togglePasswordVisibility('confirmPassword')">
+                  <img src="assets/eye.png" alt="Toggle Password Visibility" />
+                </button>
+              </div>
+              <div class="error-message" *ngIf="signupForm.controls['confirmPassword'].invalid && signupForm.controls['confirmPassword'].touched">
+                Passwords must match.
+              </div>
+            </div>
+          </div>
+          <div class="row phone-number">
+            <div class="form-group full-width">
+              <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+              <input
+                type="text"
+                id="phoneNumber"
+                formControlName="phoneNumber"
+                [ngClass]="{'touched': signupForm.controls['phoneNumber'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="signupForm.controls['phoneNumber'].invalid && signupForm.controls['phoneNumber'].touched">
+                Phone number is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="country">Country <span class="required">*</span></label>
+              <select
+                id="country"
+                formControlName="country"
+                [ngClass]="{'touched': signupForm.controls['country'].touched}"
+                class="fixed-input"
+              >
+                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+              </select>
+              <div class="error-message" *ngIf="signupForm.controls['country'].invalid && signupForm.controls['country'].touched">
+                Country is required.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="state">State <span class="optional">(Optional)</span></label>
+              <input
+                type="text"
+                id="state"
+                formControlName="state"
+                [ngClass]="{'touched': signupForm.controls['state'].touched}"
+                class="fixed-input"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="street">Street <span class="required">*</span></label>
+              <input
+                type="text"
+                id="street"
+                formControlName="street"
+                [ngClass]="{'touched': signupForm.controls['street'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="signupForm.controls['street'].invalid && signupForm.controls['street'].touched">
+                Street is required.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="streetNumber">Street Number <span class="required">*</span></label>
+              <input
+                type="text"
+                id="streetNumber"
+                formControlName="streetNumber"
+                [ngClass]="{'touched': signupForm.controls['streetNumber'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="signupForm.controls['streetNumber'].invalid && signupForm.controls['streetNumber'].touched">
+                Street number is required.
+              </div>
+            </div>
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

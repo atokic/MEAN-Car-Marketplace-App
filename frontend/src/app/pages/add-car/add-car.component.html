@@ -1,0 +1,120 @@
+<section class="add-car-form">
+  <div class="container">
+    <div class="form-content">
+      <div class="form-container">
+        <h1>Add New Car</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="carForm">
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="brand">Brand <span class="required">*</span></label>
+              <select id="brand" formControlName="brand" class="fixed-input">
+                <option *ngFor="let brand of brands" [value]="brand">{{ brand }}</option>
+              </select>
+              <div class="error-message" *ngIf="carForm.controls['brand'].invalid && carForm.controls['brand'].touched">
+                Brand is required.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="model">Model <span class="required">*</span></label>
+              <select id="model" formControlName="model" class="fixed-input">
+                <option *ngFor="let model of models" [value]="model">{{ model }}</option>
+              </select>
+              <div class="error-message" *ngIf="carForm.controls['model'].invalid && carForm.controls['model'].touched">
+                Model is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="year">Year <span class="required">*</span></label>
+              <select id="year" formControlName="year" class="fixed-input">
+                <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+              </select>
+              <div class="error-message" *ngIf="carForm.controls['year'].invalid && carForm.controls['year'].touched">
+                Year is required.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="price">Price <span class="required">*</span></label>
+              <input
+                type="text"
+                id="price"
+                formControlName="price"
+                (focus)="onFocus($event, 'price')"
+                (blur)="onBlur($event, 'price')"
+                class="fixed-input"
+                placeholder="e.g., 20000"
+              />
+              <div class="error-message" *ngIf="carForm.controls['price'].invalid && carForm.controls['price'].touched">
+                Price is required and must be a positive number.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="kilometers">Kilometers <span class="required">*</span></label>
+              <input
+                type="text"
+                id="kilometers"
+                formControlName="kilometers"
+                (focus)="onFocus($event, 'kilometers')"
+                (blur)="onBlur($event, 'kilometers')"
+                class="fixed-input"
+                placeholder="e.g., 50000"
+              />
+              <div class="error-message" *ngIf="carForm.controls['kilometers'].invalid && carForm.controls['kilometers'].touched">
+                Kilometers is required and must be a positive number.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="fuel">Fuel <span class="required">*</span></label>
+              <select id="fuel" formControlName="fuel" class="fixed-input">
+                <option *ngFor="let fuel of fuelTypes" [value]="fuel">{{ fuel }}</option>
+              </select>
+              <div class="error-message" *ngIf="carForm.controls['fuel'].invalid && carForm.controls['fuel'].touched">
+                Fuel is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group half-width">
+              <label for="consumption">Consumption <span class="required">*</span></label>
+              <input
+                type="text"
+                id="consumption"
+                formControlName="consumption"
+                (focus)="onFocus($event, 'consumption')"
+                (blur)="onBlur($event, 'consumption')"
+                class="fixed-input"
+                placeholder="e.g., 7.5"
+              />
+              <div class="error-message" *ngIf="carForm.controls['consumption'].invalid && carForm.controls['consumption'].touched">
+                Consumption is required and must be a positive number.
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="description">Description <span class="optional">(Optional)</span></label>
+              <textarea
+                id="description"
+                formControlName="description"
+                class="fixed-input"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group full-width">
+              <label for="image">Image URL <span class="optional">(Optional)</span></label>
+              <input
+                type="text"
+                id="image"
+                formControlName="image"
+                class="fixed-input"
+              />
+            </div>
+          </div>
+          <button type="submit" [disabled]="carForm.invalid">Add Car</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

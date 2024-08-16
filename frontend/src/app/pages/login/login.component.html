@@ -1,0 +1,50 @@
+<section class="auth-form">
+  <div class="container">
+    <div class="form-content">
+      <!-- Login Form -->
+      <div class="form-container">
+        <h1>Login</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+          <!-- Username Row -->
+          <div class="row">
+            <div class="form-group full-width">
+              <label for="email">E-mail <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                [ngClass]="{'touched': loginForm.controls['email'].touched, 'ng-invalid': loginForm.controls['email'].invalid}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+                E-mail is required.
+              </div>
+            </div>
+          </div>
+          <!-- Password Row -->
+          <div class="row">
+            <div class="form-group full-width">
+              <label for="password">Password <span class="required">*</span></label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  [ngClass]="{'touched': loginForm.controls['password'].touched, 'ng-invalid': loginForm.controls['password'].invalid}"
+                  class="fixed-input"
+                />
+                <button type="button" (click)="togglePasswordVisibility()">
+                  <img src="assets/eye.png" alt="Toggle Password Visibility" />
+                </button>
+              </div>
+              <div class="error-message" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                Password is required (min 6 characters).
+              </div>
+            </div>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

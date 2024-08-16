@@ -1,0 +1,62 @@
+<header>
+  <nav>
+    <!-- Title for both mobile and desktop -->
+    <div class="app-title">
+      <a routerLink="/">Car Marketplace App</a>
+    </div>
+
+    <!-- Navigation links for larger screens -->
+    <ul class="nav-left desktop-only">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/car-ads">Car Ads</a></li>
+      <li *ngIf="isUser"><a routerLink="/my-ads">My Ads</a></li>
+    </ul>
+
+    <ul class="auth-buttons desktop-only">
+      <ng-container *ngIf="isAuthenticated">
+        <li *ngIf="isAdmin"><a routerLink="/users-reports">Users Reports</a></li>
+        <li *ngIf="isAdmin"><a routerLink="/reports">Reports</a></li>
+        <li *ngIf="isAdmin"><a routerLink="/users">Users</a></li>
+      </ng-container>
+    </ul>
+
+    <ul class="auth-buttons-not-logged desktop-only">
+      <ng-container *ngIf="!isAuthenticated">
+        <li>
+          <button routerLink="/login" class="btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+        </li>
+        <li>
+          <button routerLink="/signup" class="btn"><i class="fas fa-user-plus"></i> Register</button>
+        </li>
+      </ng-container>
+    </ul>
+
+    <ul class="user-control desktop-only">
+      <ng-container *ngIf="isAuthenticated">
+        <li class="username">
+          <a routerLink="/my-profile">Welcome {{ username }}!</a>
+        </li>
+        <button (click)="logout()" class="btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </ng-container>
+      <li></li>
+    </ul>
+
+    <!-- Hamburger Menu Icon for Mobile -->
+    <div class="hamburger mobile-only" (click)="toggleMobileMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+</header>
+
+<!-- Include MobileMenuComponent -->
+<app-mobile-menu
+  *ngIf="isMobileMenuOpen"
+  [isUser]="isUser"
+  [isAdmin]="isAdmin"
+  [isAuthenticated]="isAuthenticated"
+  [username]="username"
+  (closeMenu)="toggleMobileMenu()"
+  (logout)="logout()"
+></app-mobile-menu>

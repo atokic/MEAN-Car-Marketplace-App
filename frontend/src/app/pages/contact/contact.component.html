@@ -1,0 +1,132 @@
+<section class="contact">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-form">
+        <h1>Contact Us</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+          <div class="row">
+            <div class="form-group full-width">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="firstName"
+                formControlName="firstName"
+                [ngClass]="{'touched': contactForm.controls['firstName'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="contactForm.controls['firstName'].invalid && contactForm.controls['firstName'].touched">
+                First name is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group full-width">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="lastName"
+                formControlName="lastName"
+                [ngClass]="{'touched': contactForm.controls['lastName'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="contactForm.controls['lastName'].invalid && contactForm.controls['lastName'].touched">
+                Last name is required.
+              </div>
+            </div>
+          </div>
+          <div class="row phone-number">
+            <div class="form-group full-width">
+              <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+              <input
+                type="text"
+                id="phoneNumber"
+                formControlName="phoneNumber"
+                [ngClass]="{'touched': contactForm.controls['phoneNumber'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="contactForm.controls['phoneNumber'].invalid && contactForm.controls['phoneNumber'].touched">
+                Phone number is required.
+              </div>
+            </div>
+          </div>
+          <div class="row email">
+            <div class="form-group full-width">
+              <label for="email">E-mail <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                [ngClass]="{'touched': contactForm.controls['email'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched">
+                E-mail is required.
+              </div>
+            </div>
+          </div>
+          <div class="row subject">
+            <div class="form-group full-width">
+              <label for="subject">Subject <span class="required">*</span></label>
+              <input
+                type="text"
+                id="subject"
+                formControlName="subject"
+                [ngClass]="{'touched': contactForm.controls['subject'].touched}"
+                class="fixed-input"
+              />
+              <div class="error-message" *ngIf="contactForm.controls['subject'].invalid && contactForm.controls['subject'].touched">
+                Subject is required.
+              </div>
+            </div>
+          </div>
+          <div class="row message">
+            <div class="form-group full-width">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea
+                id="message"
+                formControlName="message"
+                [ngClass]="{'touched': contactForm.controls['message'].touched}"
+                class="fixed-input"
+              ></textarea>
+              <div class="error-message" *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched">
+                Message is required.
+              </div>
+            </div>
+          </div>
+          <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-details">
+        <div class="contact-info">
+          <h1>Get in Touch</h1>
+          <p>We’d love to hear from you! Whether you have a question about our services or just want to say hello, feel free to reach out.</p>
+          <ul>
+            <li>Email: <a href="mailto:support@carmarket.com">atokic15&#64;gmail.com</a></li>
+            <li>Phone: <a href="tel:+1234567890">+385 95 574 9860</a></li>
+            <li>Address: Lučane 110 A, 21230 Sinj, Croatia</li>
+          </ul>
+        </div>
+        <div class="working-hours">
+          <h2>Working Hours</h2>
+          <ul>
+            <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+            <li>Saturday: 10:00 AM - 4:00 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+        <div class="location">
+          <h2>Our Location</h2>
+          <p>Lučane 110 A, 21230 Sinj, Croatia</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11676.781231868198!2d16.593195!3d43.718949!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355a9e4f9ad7f9%3A0x9b7e5f8e9b4a5f35!2s43%C2%B043'08.2%22N%2016%C2%B035'35.5%22E!5e0!3m2!1sen!2shr!4v1628248499937!5m2!1sen!2shr"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

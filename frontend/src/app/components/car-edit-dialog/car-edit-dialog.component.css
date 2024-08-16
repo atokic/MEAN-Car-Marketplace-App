@@ -1,0 +1,138 @@
+.custom-dialog-container {
+    color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow-y: auto;
+    max-height: 80vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.custom-dialog-container .mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.custom-dialog-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.custom-dialog-container .mat-form-field.mat-form-field-inline {
+    flex: 1 1 calc(50% - 1.5rem);
+}
+
+.custom-dialog-container .mat-form-field mat-label {
+    color: #bbb;
+}
+
+.custom-dialog-container mat-form-field mat-form-field-wrapper {
+    border-radius: 4px;
+    border: 1px solid #555;
+}
+
+.custom-dialog-container input,
+.custom-dialog-container mat-select {
+    color: #000000;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.custom-dialog-container input::placeholder {
+    color: #888;
+}
+
+.custom-dialog-container button {
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 0.5rem;
+}
+
+.custom-dialog-container button:hover {
+    background: linear-gradient(90deg, #182848, #4b6cb7);
+    transform: scale(1.05);
+}
+
+.custom-dialog-container .btn-save {
+    background: linear-gradient(90deg, #4caf50, #388e3c);
+}
+
+.custom-dialog-container .btn-save:hover {
+    background: linear-gradient(90deg, #388e3c, #4caf50);
+}
+
+.custom-dialog-container .btn-cancel {
+    background: linear-gradient(90deg, #f44336, #d32f2f);
+}
+
+.custom-dialog-container .btn-cancel:hover {
+    background: linear-gradient(90deg, #d32f2f, #f44336);
+}
+
+.custom-dialog-container mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .custom-dialog-container {
+        padding: 1.5rem;
+    }
+
+    .custom-dialog-container .row {
+        gap: 1rem;
+    }
+
+    .custom-dialog-container .mat-form-field.mat-form-field-inline {
+        flex: 1 1 100%;
+    }
+
+    .custom-dialog-container button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-dialog-container {
+        padding: 1rem;
+    }
+
+    .custom-dialog-container .row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .custom-dialog-container .mat-form-field.mat-form-field-inline {
+        flex: 1 1 100%;
+    }
+
+    .custom-dialog-container button {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .custom-dialog-container mat-dialog-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .custom-dialog-container mat-dialog-actions button {
+        margin: 0.5rem 0;
+    }
+}

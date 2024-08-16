@@ -1,0 +1,96 @@
+.filter-container {
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filter-title {
+  padding: 2rem;
+  color: #fff;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.filter-wrapper {
+  padding: 0rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.filter-row mat-form-field {
+  flex: 1 1 calc(25% - 16px);
+  min-width: 200px;
+}
+
+.filter-row button {
+  flex: 1 1 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.filter-row button:hover {
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .filter-wrapper {
+    padding: 1.5rem;
+  }
+
+  .filter-row mat-form-field {
+    flex: 1 1 calc(50% - 16px);
+  }
+
+  .filter-row button {
+    font-size: 1rem;
+  }
+
+  .filter-wrapper {
+    padding: 0rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-wrapper {
+    padding: 1rem;
+  }
+
+  .filter-row mat-form-field {
+    flex: 1 1 100%;
+  }
+
+  .filter-row button {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .filter-wrapper {
+    padding: 0rem 2rem;
+  }
+}

@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>Edit Profile</h2>
+<form (ngSubmit)="onSave()">
+  <mat-dialog-content>
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput [(ngModel)]="data.user.firstName" name="firstName" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput [(ngModel)]="data.user.lastName" name="lastName" required />
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="data.user.username" name="username" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="data.user.email" name="email" required />
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input matInput [(ngModel)]="data.user.phoneNumber" name="phoneNumber" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Country</mat-label>
+        <mat-select [(ngModel)]="data.user.address.country" name="country" required>
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{ country }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>State</mat-label>
+        <input matInput [(ngModel)]="data.user.address.state" name="state" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Street</mat-label>
+        <input matInput [(ngModel)]="data.user.address.street" name="street" required />
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Street Number</mat-label>
+        <input matInput [(ngModel)]="data.user.address.streetNumber" name="streetNumber" required />
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+    <button mat-button type="submit" class="btn-save">Save</button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,115 @@
+.my-profile {
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.profile-container {    
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.profile-card {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-name h2 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.profile-name p {
+  margin: 0.5rem 0 0;
+  color: #bbb;
+}
+
+.profile-info h3 {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.profile-info p {
+  margin: 0.5rem 0;
+  color: #ddd;
+}
+
+.profile-info p strong {
+  color: #fff;
+}
+
+.profile-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.profile-actions button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.custom-dialog-container {
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow-y: auto;
+  max-height: 80vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-name h2 {
+    font-size: 2rem;
+  }
+
+  .profile-info h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 1rem;
+  }
+
+  .profile-name h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .profile-info p {
+    font-size: 0.9rem;
+  }
+
+  .profile-actions {
+    text-align: left;
+  }
+
+  .profile-actions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
