@@ -1,0 +1,97 @@
+<section class="reports">
+  <div class="reports-container">
+    <h1>Car Ads Reports</h1>
+    <div class="grid-container">
+      <mat-card class="report-card total-cars">
+        <mat-card-header>
+          <mat-card-title>Total Cars</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{ totalCars }}</h2>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars by Fuel</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-fuel"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars by Model</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-model"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars by Kilometers</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-kilometers"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars by Brand</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-brand"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars by Year</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-year"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars by Price Range</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-price-range"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars Added Per Month</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-monthly"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="report-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Cars by Consumption</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-consumption"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

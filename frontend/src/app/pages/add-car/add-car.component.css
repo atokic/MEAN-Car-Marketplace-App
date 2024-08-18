@@ -1,0 +1,173 @@
+.add-car-form {
+  padding: 1rem 0;
+  color: #fff;
+  text-align: center;
+}
+
+.add-car-form .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.form-content {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;  
+  margin: 0 auto;
+}
+
+.form-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.fixed-input {
+  width: calc(100% - 30px);
+  padding: 0.75rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.fixed-input.touched.ng-valid {
+  border-color: #4caf50;
+}
+
+.fixed-input.touched.ng-invalid {
+  border-color: #f44336;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+button {
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+  transform: scale(1.05);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.row .form-group {
+  flex: 1;
+}
+
+.full-width {
+  flex: 1 100%;
+}
+
+.half-width {
+  flex: 1 50%;
+}
+
+.required {
+  color: rgb(255, 255, 255);
+}
+
+.optional {
+  padding-left: 0.5rem;
+  color: gray;
+}
+
+select.fixed-input {
+  width: 100%;
+}
+
+textarea.fixed-input {
+  height: 18px;
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .form-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .row .form-group {
+    flex: 1 100%;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-car-form .container {
+    padding: 1rem 0;
+  }
+
+  .form-container {
+    padding: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .form-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .row {
+    gap: 0.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  textarea.fixed-input {
+    height: 10rem;
+  }
+}

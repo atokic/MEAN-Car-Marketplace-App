@@ -1,0 +1,71 @@
+<section class="users">
+  <div class="container">
+    <!-- Table view for larger screens -->
+    <div class="table-container" *ngIf="users.length > 0; else noUsers">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>UserID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>Street</th>
+            <th>Street Number</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.userID }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phoneNumber }}</td>
+            <td>{{ user.address.country }}</td>
+            <td>{{ user.address.state }}</td>
+            <td [attr.data-fulltext]="user.address.street">{{ user.address.street }}</td>
+            <td>{{ user.address.streetNumber }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              <button class="btn btn-edit" (click)="editUser(user)">Edit</button>
+              <button class="btn btn-delete" (click)="deleteUser(user.userID)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Card view for smaller screens -->
+    <div class="card-container" *ngIf="users.length > 0; else noUsers">
+      <div class="card" *ngFor="let user of users">
+        <div class="card-header">
+          <h2 class="card-title">{{ user.firstName }} {{ user.lastName }}</h2>
+          <div class="card-actions">
+            <button class="btn btn-edit" (click)="editUser(user); $event.stopPropagation()">Edit</button>
+            <button class="btn btn-delete" (click)="deleteUser(user.userID); $event.stopPropagation()">Delete</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>UserID:</strong> {{ user.userID }}</p>
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Phone Number:</strong> {{ user.phoneNumber }}</p>
+          <p><strong>Country:</strong> {{ user.address.country }}</p>
+          <p><strong>State:</strong> {{ user.address.state }}</p>
+          <p><strong>Street:</strong> {{ user.address.street }}</p>
+          <p><strong>Street Number:</strong> {{ user.address.streetNumber }}</p>
+          <p><strong>Role:</strong> {{ user.role }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #noUsers>
+      <p>No users found.</p>
+    </ng-template>
+  </div>
+</section>

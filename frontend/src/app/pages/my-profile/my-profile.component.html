@@ -1,0 +1,28 @@
+<section class="my-profile">
+  <div class="profile-container" *ngIf="userProfile">
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="profile-name">
+          <h2>{{ userProfile.firstName }} {{ userProfile.lastName }}</h2>
+          <p>{{ userProfile.username }}</p>
+        </div>
+      </div>
+      <div class="profile-info">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> {{ userProfile.email }}</p>
+        <p><strong>Phone Number:</strong> {{ userProfile.phoneNumber }}</p>
+        <h3>Address</h3>
+        <p><strong>Street:</strong> {{ userProfile.address.street }}</p>
+        <p><strong>Street Number:</strong> {{ userProfile.address.streetNumber }}</p>
+        <p><strong>City/State:</strong> {{ userProfile.address.state }}</p>
+        <p><strong>Country:</strong> {{ userProfile.address.country }}</p>
+        <h3>Account Details</h3>
+        <p><strong>Role:</strong> {{ userProfile.role }}</p>
+        <p><strong>Status:</strong> {{ userProfile.status }}</p>
+      </div>
+      <div class="profile-actions">
+        <button mat-raised-button color="primary" (click)="editProfile()">Edit</button>
+      </div>
+    </div>
+  </div>
+</section>

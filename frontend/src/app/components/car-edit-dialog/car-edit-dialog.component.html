@@ -1,0 +1,64 @@
+<h2 mat-dialog-title>Edit Car</h2>
+<form (ngSubmit)="onSave()">
+  <mat-dialog-content>
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Brand</mat-label>
+        <input matInput [(ngModel)]="car.brand" name="brand" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Model</mat-label>
+        <input matInput [(ngModel)]="car.model" name="model" required />
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Year</mat-label>
+        <input matInput [(ngModel)]="car.year" name="year" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput [(ngModel)]="car.price" name="price" required />
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Kilometers</mat-label>
+        <input matInput [(ngModel)]="car.kilometers" name="kilometers" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Fuel</mat-label>
+        <input matInput [(ngModel)]="car.fuel" name="fuel" required />
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Consumption</mat-label>
+        <input matInput [(ngModel)]="car.consumption" name="consumption" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="car.description" name="description" rows="4" required></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-inline" appearance="fill">
+        <mat-label>Image URL</mat-label>
+        <input matInput [(ngModel)]="car.image" name="image" required />
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+    <button mat-button type="submit" class="btn-save">Save</button>
+  </mat-dialog-actions>
+</form>

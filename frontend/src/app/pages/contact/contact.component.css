@@ -1,0 +1,179 @@
+.contact {
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.contact .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  gap: 2rem;
+}
+
+.contact-form,
+.contact-details {
+  padding: 2rem;
+  flex: 1;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 8px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-group-inline {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.contact-form .form-group-item {
+  flex: 1;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 520px;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.contact-form input.ng-touched.ng-invalid,
+.contact-form textarea.ng-touched.ng-invalid {
+  border-color: #f44336;
+}
+
+.contact-form input.ng-touched.ng-valid,
+.contact-form textarea.ng-touched.ng-valid {
+  border-color: #4caf50;
+}
+
+.contact-form .error-message {
+  color: #f44336;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.contact-form button {
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1rem;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+  transform: scale(1.05);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.working-hours h2,
+.location h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info ul,
+.working-hours ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li,
+.working-hours ul li,
+.location p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.location iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 8px;
+}
+
+.contact-info ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info ul li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .contact-details {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .contact-info,
+  .working-hours,
+  .location {
+    padding: 1rem;
+  }
+
+  .contact-form h1,
+  .contact-info h2,
+  .working-hours h2,
+  .location h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    max-width: 90%;
+  }
+}

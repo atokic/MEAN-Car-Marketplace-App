@@ -1,0 +1,110 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: url('https://images.pexels.com/photos/919073/pexels-photo-919073.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+}
+
+body.home {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+.container, .form-container {
+    max-width: 100%;
+    width: 100%;
+}
+
+.toast-container {
+    position: fixed;
+    top: 12%;
+    right: 2rem;
+    width: auto;
+    max-width: 90%;
+    z-index: 9999;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.toast {
+    text-align: center;
+}
+
+.toast-success, .toast-error {
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toast-success {
+    background-color: #28a745;
+}
+
+.toast-error {
+    background-color: #dc3545;
+}
+
+@media (max-width: 768px) {
+    .toast-container {
+        top: 10% !important;
+        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        padding: 0 1rem;
+    }
+
+    .toast-success, .toast-error {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .custom-dialog-container {
+        margin-top: 10em !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .toast-container {
+        top: 5% !important;
+        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .toast-success, .toast-error {
+        padding: 20px 40px;
+        font-size: 1.1rem;
+        border-radius: 6px;
+    }
+
+    .custom-dialog-container {
+        margin-top: 5em !important;
+    }
+}

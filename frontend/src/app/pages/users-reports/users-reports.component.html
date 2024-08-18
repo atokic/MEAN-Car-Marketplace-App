@@ -1,0 +1,59 @@
+<section class="users">
+  <div class="users-container">
+    <h1>Users Reports</h1>
+    <div class="grid-container">
+      <mat-card class="user-card total-users">
+        <mat-card-header>
+          <mat-card-title>Total Users</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{ totalUsers }}</h2>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="user-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Users by Age Range</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-age-range"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="user-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Users by Role</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-role"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="user-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Users by Country</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-country"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="user-card chart-card">
+        <mat-card-header>
+          <mat-card-title>Active Users Per Month</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="chart-wrapper">
+            <canvas id="chart-active-monthly"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

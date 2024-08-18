@@ -1,0 +1,172 @@
+.car-item {
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.car-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.car-card {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.car-title h2 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.car-title p {
+  margin: 0.5rem 0 0;
+  color: #bbb;
+}
+
+.car-info h3 {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.car-info p {
+  margin: 0.5rem 0;
+  color: #ddd;
+}
+
+.car-info p strong {
+  color: #fff;
+}
+
+.car-img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.car-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.car-actions button {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.car-actions .mat-raised-button {
+  flex: 1;
+}
+
+.car-actions .mat-raised-button:first-child {
+  margin-right: 1rem;
+}
+
+.car-actions .mat-raised-button:last-child {
+  margin-left: 1rem;
+}
+
+.car-actions .mat-raised-button.color-primary {
+  background-color: #4b6cb7;
+  color: white;
+}
+
+.car-actions .mat-raised-button.color-primary:hover {
+  background-color: #182848;
+}
+
+.car-actions .mat-raised-button.color-warn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.car-actions .mat-raised-button.color-warn:hover {
+  background-color: #c0392b;
+}
+
+.edit-car-dialog-container {
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 200px auto;
+  overflow-y: auto;
+  max-height: 80vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .car-card {
+    padding: 1.5rem;
+  }
+
+  .car-title h2 {
+    font-size: 2rem;
+  }
+
+  .car-info h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-container {
+    padding: 1rem 0;
+  }
+
+  .car-card {
+    padding: 1rem;
+  }
+
+  .car-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .car-title p {
+    font-size: 1rem;
+  }
+
+  .car-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .car-info p {
+    font-size: 0.9rem;
+  }
+
+  .car-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .car-actions button {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .car-img {
+    max-height: 200px;
+  }
+}

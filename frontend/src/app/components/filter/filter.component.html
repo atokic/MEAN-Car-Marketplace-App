@@ -1,0 +1,95 @@
+<div class="filter-container">
+  <div class="filter-title">Filter</div>
+  <div class="filter-wrapper">
+    <form [formGroup]="filterForm" (ngSubmit)="onApplyFilters()">
+      <div class="filter-row">
+        <mat-form-field appearance="fill">
+          <mat-label>Brand</mat-label>
+          <mat-select formControlName="brand">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Model</mat-label>
+          <mat-select formControlName="model" [disabled]="models.length === 0">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let model of models" [value]="model">{{ model }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Fuel Type</mat-label>
+          <mat-select formControlName="fuelType">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let fuel of fuelTypes" [value]="fuel">{{ fuel }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        <div class="filter-row">
+        <mat-form-field appearance="fill">
+          <mat-label>Min Year</mat-label>
+          <mat-select formControlName="minYear">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Max Year</mat-label>
+          <mat-select formControlName="maxYear">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Min Consumption</mat-label>
+          <mat-select formControlName="minConsumption">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let cons of minConsumptionOptions" [value]="cons">{{ cons }} L/100km</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Max Consumption</mat-label>
+          <mat-select formControlName="maxConsumption">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let cons of maxConsumptionOptions" [value]="cons">{{ cons }} L/100km</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Min Price</mat-label>
+          <mat-select formControlName="minPrice">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let price of priceOptions" [value]="price">{{ price | currency:'EUR':'symbol' }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Max Price</mat-label>
+          <mat-select formControlName="maxPrice">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let price of priceOptions" [value]="price">{{ price | currency:'EUR':'symbol' }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Min Kilometers</mat-label>
+          <mat-select formControlName="minKilometers">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let km of kilometersOptions" [value]="km">{{ km | number }} km</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Max Kilometers</mat-label>
+          <mat-select formControlName="maxKilometers">
+            <mat-option value="">Any</mat-option>
+            <mat-option *ngFor="let km of kilometersOptions" [value]="km">{{ km | number }} km</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        <div *ngIf="filterForm.errors?.['invalidRange']" class="error-message">
+        <p>Invalid range detected. Please ensure that max values are greater than min values.</p>
+      </div>
+      <div class="filter-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="filterForm.invalid">Apply Filters</button>
+      </div>
+    </form>
+  </div>
+</div>

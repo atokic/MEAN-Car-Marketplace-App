@@ -1,0 +1,151 @@
+.users {
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.table-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #4b6bb73a;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.table td {
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #555;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.card-container {
+  display: none;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.card-body p {
+  margin: 5px 0;
+  color: white;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-edit {
+  background-color: #4b6cb7;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.btn-edit:hover {
+  background-color: #182848;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+  margin-bottom: 0.5rem;
+
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+.card-title {
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 10px;
+  }
+
+  .table th, .table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-container {
+    display: none;
+  }
+
+  .card-container {
+    display: block;
+  }
+
+  .card {
+    font-size: 0.9rem;
+  }
+
+  .card-body p {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
