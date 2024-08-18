@@ -67,3 +67,4 @@ The frontend will be accessible at http://localhost:4200.
 
 ## Demo Video
 You can watch a video of the demo application working, which is located in the root directory of the project.
+(https://github.com/atokic/MEAN-Car-Marketplace-App/blob/master/Car%20Marketplace%20App%20(demo).mp4)
