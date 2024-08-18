@@ -64,3 +64,6 @@ Once the dependencies are installed, start the Angular development server with:
 **npm start**
 
 The frontend will be accessible at http://localhost:4200.
+
+## Demo Video
+You can watch a video of the demo application working, which is located in the root directory of the project.
